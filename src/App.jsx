@@ -73,32 +73,41 @@ export default function App(){
 
   return(
     <div className="App">
-     {movies.map((usr)=>(
-      <Msg 
-      name={usr.name}
-      poster={usr.poster}
-      summary={usr.summary}
-      rating={usr.rating}
-      />
-     ))}
+      {movies.map((mv)=>(
+       <Msg 
+       name={mv.name}
+       poster={mv.poster}
+       summary={mv.summary}
+       rating={mv.rating}
+       />
+      ))}
     </div>
   )
 }
 
-function Msg({name, rating, summary, poster}){
+function Msg({name, poster, summary, rating}){
+
+  const styles = {color: rating > 8.5 ? "green" : "crimson"}
+
+  const[show, setShow] = useState(true);
+
+  const styleSummary = {display: show ? "block" : "none"}
+
   return(
-    <div className="mov">
+    <div>
       <img src={poster} alt={name} />
-      <h1>{name} ⭐ {rating}</h1>
-      <p>{summary}</p>
+      <h2>{name}</h2>
+      <p style={styles}>⭐ {rating}</p>
+      <button onClick={()=>setShow(!show)}>Toggle Summary</button>
+      <p style={styleSummary}>{summary}</p>
       <Counter />
     </div>
   )
 }
 
 function Counter(){
-  const[like, setLike]=useState(0);
-  const[dislike, setDislike]=useState(0);
+  const[like, setLike] = useState(0);
+  const[dislike, setDislike] = useState(0);
   return(
     <div>
       <button onClick={()=>setLike(like+1)}>👍 {like}</button>
