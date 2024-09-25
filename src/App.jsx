@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Button from '@mui/material/Button';
 
 export default function App(){
   const[movies, setMovies] = useState([
@@ -82,7 +83,8 @@ export default function App(){
         <input onChange={(event)=>setPoster(event.target.value)} type="text" placeholder="Poster" />
         <input onChange={(event)=>setRating(event.target.value)} type="text" placeholder="Rating" />
         <input onChange={(event)=>setSummary(event.target.value)} type="text" placeholder="Summary" />
-        <button onClick={()=>{
+        
+        <Button onClick={()=>{
           const newMovie = {
             name: name,
             poster: poster,
@@ -90,7 +92,7 @@ export default function App(){
             summary: summary
           };
           setMovies([...movies, newMovie]);
-        }}>Add Movie</button>
+        }} variant="contained">Add Movie</Button>
       </div>
     <div className="App">
       {movies.map((mv, index)=>(
@@ -120,7 +122,7 @@ function Msg({name, poster, summary, rating}){
       <img src={poster} alt={name} />
       <h2>{name}</h2>
       <p style={styles}>⭐ {rating}</p>
-      <button onClick={()=>setShow(!show)}>Toggle Summary</button>
+      <Button onClick={()=>setShow(!show)} variant="text">Toggle Summary</Button>
       <p style={styleSummary}>{summary}</p>
       <Counter />
     </div>
@@ -132,8 +134,13 @@ function Counter(){
   const[dislike, setDislike] = useState(0);
   return(
     <div>
-      <button onClick={()=>setLike(like+1)}>👍 {like}</button>
-      <button onClick={()=>setDislike(dislike+1)}>👎 {dislike}</button>
+      <Button onClick={()=>setLike(like+1)} variant="contained" color="success">
+      👍 {like}
+      </Button>
+      {" "} 
+      <Button onClick={()=>setDislike(like+1)} variant="contained" color="success">
+      👎 {dislike}
+      </Button>
     </div>
   )
 }

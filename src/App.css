@@ -46,7 +46,7 @@
   
   /* Button to toggle movie summary */
   button {
-    background-color: #007bff;
+    background-color: green;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -67,7 +67,7 @@
   
   /* Like and Dislike buttons */
   button:nth-child(4) {
-    background-color: #28a745;
+    background-color: skyblue;
   }
   
   button:nth-child(4):hover {
