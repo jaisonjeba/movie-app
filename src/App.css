@@ -1,91 +1,99 @@
 /* App container with grid layout */
 .App {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  background-color: #f4f4f9;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f9;
+  }
+  
+  /* Movie card styling */
+  .App div {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .App div:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Movie poster image */
+  img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Movie name styling */
+  h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+  }
+  
+  /* Rating styling (dynamic color is applied via inline styles in JSX) */
+  p {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  
+  /* Button to toggle movie summary */
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Like and Dislike buttons */
+  button:nth-child(4) {
+    background-color: #28a745;
+  }
+  
+  button:nth-child(4):hover {
+    background-color: #218838;
+  }
+  
+  button:nth-child(5) {
+    background-color: #ff5c5c;
+  }
+  
+  button:nth-child(5):hover {
+    background-color: #e74c3c;
+  }
+  
+  /* Counter section for like and dislike buttons */
+  .Counter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
 
-/* Movie card styling */
-.App div {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 20px;
-  text-align: center;
-  transition: transform 0.2s;
-}
-
-.App div:hover {
-  transform: scale(1.05);
-}
-
-/* Movie poster image */
-img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
-
-/* Movie name styling */
-h2 {
-  font-size: 1.5em;
-  margin: 10px 0;
-  color: #333;
-}
-
-/* Rating styling (dynamic color is applied via inline styles in JSX) */
-p {
-  font-size: 1em;
-  margin: 10px 0;
-}
-
-/* Button to toggle movie summary */
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 10px 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button:focus {
-  outline: none;
-}
-
-/* Like and Dislike buttons */
-button:nth-child(4) {
-  background-color: #28a745;
-}
-
-button:nth-child(4):hover {
-  background-color: #218838;
-}
-
-button:nth-child(5) {
-  background-color: #ff5c5c;
-}
-
-button:nth-child(5):hover {
-  background-color: #e74c3c;
-}
-
-/* Counter section for like and dislike buttons */
-.Counter {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
+  .styles{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px auto;
+    max-width: 500px;
+  }
