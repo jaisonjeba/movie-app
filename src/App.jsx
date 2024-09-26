@@ -138,7 +138,7 @@ function Counter(){
       👍 {like}
       </Button>
       {" "} 
-      <Button onClick={()=>setDislike(like+1)} variant="contained" color="success">
+      <Button onClick={()=>setDislike(dislike+1)} variant="contained" color="success">
       👎 {dislike}
       </Button>
     </div>
