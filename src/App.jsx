@@ -28,4 +28,42 @@ export function App(){
   )
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+function Msg({name, poster, summary, rating}){
+
+  const styles = {color: rating > 8.5 ? "green" : "crimson"}
+
+  const[show, setShow] = useState(true);
+
+  const styleSummary = {display: show ? "block" : "none"}
+
+  return(
+    <div>
+      <img src={poster} alt={name} />
+      <h2>{name}</h2>
+      <p style={styles}>⭐ {rating}</p>
+      <Button onClick={()=>setShow(!show)} variant="text">Toggle Summary</Button>
+      <p style={styleSummary}>{summary}</p>
+      <Counter />
+    </div>
+  )
+}
+
+function Counter(){
+  const[like, setLike] = useState(0);
+  const[dislike, setDislike] = useState(0);
+  return(
+    <div>
+      <Button onClick={()=>setLike(like+1)} variant="contained" color="success">
+      👍 {like}
+      </Button>
+      {" "} 
+      <Button onClick={()=>setDislike(dislike+1)} variant="contained" color="success">
+      👎 {dislike}
+      </Button>
+    </div>
+  )
+}
+>>>>>>> 830cec6fe03f5bb6609d37f3bfc9055e39d78119
