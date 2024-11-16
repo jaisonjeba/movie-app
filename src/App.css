@@ -140,10 +140,16 @@ h1 {
   color: #444;
 }
 
-/* Not Found Page */
-.container {
+.not-found{
   width: 100%;
+  object-fit: cover;
   max-width: 600px;
-  display: block;
-  margin: 50px auto;
+}
+
+.movie-detail-container{
+  max-width: 750px;
+}
+
+body{
+  margin: 0;
 }
